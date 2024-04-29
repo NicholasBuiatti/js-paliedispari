@@ -51,6 +51,7 @@ myform.addEventListener('submit', function (prevenzione) {
 //             GIOCO D'AZZARDO
 
 const dadiForm = document.getElementById('dadiForm');
+const resultDadi = document.getElementById('resultDadi');
 
 dadiForm.addEventListener('submit', function (prevenzione) {
     prevenzione.preventDefault();
@@ -74,14 +75,18 @@ dadiForm.addEventListener('submit', function (prevenzione) {
 
     //Dichiariamo chi ha vinto.
     if (odd == false && even == false) {
+        resultDadi.innerHTML = 'Nullo! seleziona prima pari o dispari!';
         console.log('Null');
     } else {
         if (EvenOrOdd(numSomma) == 'pari' && even == true) {
+            resultDadi.innerHTML = `<i class="fa-solid fa-check"></i>Il Robot ha buttato ${numRobot} e la somma fa ${numSomma}! Hai vinto con pari`;
             console.log('hai vinto con pari')
         } else if (EvenOrOdd(numSomma) == 'dispari' && odd == true) {
+            resultDadi.innerHTML = `<i class="fa-solid fa-check"></i>Il Robot ha buttato ${numRobot} e la somma fa ${numSomma}! Hai vinto con pari`;
             console.log('hai vinto con dispari')
         } else {
-            console.log('hai perso')
+            resultDadi.innerHTML = `<i class="fa-solid fa-xmark"></i>Il Robot ha buttato ${numRobot} e la somma fa ${numSomma}! Hai perso`;
+            console.log(`hai perso`)
         }
     }
 })

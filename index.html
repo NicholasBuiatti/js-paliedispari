@@ -13,26 +13,32 @@
     <!-- inizio pagina -->
     <div>
         <h1 class="text-white text-center">Palindorma o non Palindroma?</h1>
-        <div class="container">
-            <form action="">
+        <div class="container text-center">
+            <form action="" class="mt-5">
                 <input type="text" id="wordAdd" placeholder="scegli una parola" required>
                 <button id="checkVar">Invia</button>
             </form>
             <div>
-                <h1 class="text-white">Il risultato è: <span id="result"></span></h1>
+                <h1 class="text-white mt-4">Il risultato è: 
+                    <span class="text-white" id="result"></span>
+                </h1>
             </div>
         </div>
-        <h1 class="text-white text-center">Gioco d'azzardo</h1>
-        <div class="container">
-            <form action="" id="dadiForm">
+        <h1 class="text-white text-center mt-5">Gioco d'azzardo</h1>
+        <div class="container text-center">
+            <form action="" id="dadiForm" class="mt-5">
                 <label for="pari" class="text-white">Pari</label>
                 <input type="radio" name="EvenOrOdd" id="pari">
                 <label for="dispari" class="text-white">Dispari</label>
                 <input type="radio" name="EvenOrOdd" id="dispari">
                 
-                <input type="number" id="numAdd" required>
+                <input class="text-center" type="number" id="numAdd" required max = 5 min = 1>
                 <button id="dadiBtn">Tira i dadi</button>
             </form>
+            <div class="mt-4">
+                <h1 class="text-white">Hai vinto o perso??</h1>
+                <span class="text-white" id="resultDadi"></span>
+            </div>
         </div>
     </div>
 
