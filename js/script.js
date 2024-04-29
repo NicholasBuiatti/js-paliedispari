@@ -43,3 +43,40 @@ myform.addEventListener('submit', function (prevenzione) {
 
 // BONUS uso del ciclo.
 // (Eventuali soluzioni più "comode" potete aggiungere come extra in un commit separato solo DOPO.)
+// ciclo while
+
+
+
+//////////////////////////////////////////////////////////////
+//             GIOCO D'AZZARDO
+
+//l'utente seleziona pari o dispari
+
+
+
+//l'utente seleziona un numero tra 1 e 5
+let numUser = 2
+
+//il computer estrae un numero random tra 1 e 5
+let numRobot = numRandom();
+
+function numRandom() {
+    return Math.floor((Math.random() * 5) + 1);
+}
+console.log(numRobot);
+
+//Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione).
+
+const numSomma = numUser + numRobot;
+
+console.log(EvenOrOdd(numSomma));
+
+//funzione per verifica numero pari o dispari
+function EvenOrOdd(num) {
+    if (num % 2 == 0) {
+        return 'pari'
+    }
+    return 'dispari'
+}
+
+//Dichiariamo chi ha vinto.
