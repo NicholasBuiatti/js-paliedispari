@@ -15,12 +15,24 @@
         <h1 class="text-white text-center">Palindorma o non Palindroma?</h1>
         <div class="container">
             <form action="">
-                <input type="text" id="wordAdd">
+                <input type="text" id="wordAdd" placeholder="scegli una parola" required>
                 <button id="checkVar">Invia</button>
             </form>
             <div>
                 <h1 class="text-white">Il risultato è: <span id="result"></span></h1>
             </div>
+        </div>
+        <h1 class="text-white text-center">Gioco d'azzardo</h1>
+        <div class="container">
+            <form action="" id="dadiForm">
+                <label for="pari" class="text-white">Pari</label>
+                <input type="radio" name="EvenOrOdd" id="pari">
+                <label for="dispari" class="text-white">Dispari</label>
+                <input type="radio" name="EvenOrOdd" id="dispari">
+                
+                <input type="number" id="numAdd" required>
+                <button id="dadiBtn">Tira i dadi</button>
+            </form>
         </div>
     </div>
 

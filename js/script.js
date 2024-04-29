@@ -32,7 +32,7 @@ function palindromaOrNot(parola) {
 const myResult = document.getElementById('result');
 
 myform.addEventListener('submit', function (prevenzione) {
-    
+
     let word = document.querySelector('#wordAdd').value;
 
     prevenzione.preventDefault();
@@ -50,26 +50,42 @@ myform.addEventListener('submit', function (prevenzione) {
 //////////////////////////////////////////////////////////////
 //             GIOCO D'AZZARDO
 
-//l'utente seleziona pari o dispari
+const dadiForm = document.getElementById('dadiForm');
 
+dadiForm.addEventListener('submit', function (prevenzione) {
+    prevenzione.preventDefault();
 
+    //l'utente seleziona pari o dispari
+    const odd = document.getElementById('dispari').checked;
+    const even = document.getElementById('pari').checked;
+    console.log('dispari', odd, 'pari', even);
 
-//l'utente seleziona un numero tra 1 e 5
-let numUser = 2
+    //l'utente seleziona un numero tra 1 e 5
+    let numUser = parseInt(document.getElementById('numAdd').value);
+    console.log('user:', numUser, typeof numUser);
 
-//il computer estrae un numero random tra 1 e 5
-let numRobot = numRandom();
+    //il computer estrae un numero random tra 1 e 5
+    let numRobot = numRandom();
+    console.log('il numero Robot è:', numRobot);
 
-function numRandom() {
-    return Math.floor((Math.random() * 5) + 1);
-}
-console.log(numRobot);
+    //Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione).
+    const numSomma = numUser + numRobot;
+    console.log('la somma è:', numSomma, typeof numSomma);
 
-//Stabiliamo se la somma dei due numeri è pari o dispari (usando una funzione).
+    //Dichiariamo chi ha vinto.
+    if (odd == false && even == false) {
+        console.log('Null');
+    } else {
+        if (EvenOrOdd(numSomma) == 'pari' && even == true) {
+            console.log('hai vinto con pari')
+        } else if (EvenOrOdd(numSomma) == 'dispari' && odd == true) {
+            console.log('hai vinto con dispari')
+        } else {
+            console.log('hai perso')
+        }
+    }
+})
 
-const numSomma = numUser + numRobot;
-
-console.log(EvenOrOdd(numSomma));
 
 //funzione per verifica numero pari o dispari
 function EvenOrOdd(num) {
@@ -79,4 +95,7 @@ function EvenOrOdd(num) {
     return 'dispari'
 }
 
-//Dichiariamo chi ha vinto.
+//funzione per l'estrazione di un numero random da 1 a 5
+function numRandom() {
+    return Math.floor((Math.random() * 5) + 1);
+}
